@@ -41,7 +41,7 @@ public abstract class ProxyAutomobile {
 		String returnValue = null;
 		model.Automobile automobileObject = new model.Automobile();
 		try {
-			autoutil.read("FordZTW.txt", automobileObject);
+			autoutil.read(filename, automobileObject);
 			returnValue = automobileTable.insertWrapper(automobileObject);
 		} catch (exception.AutoException e) {
 			// double check that return value is null
@@ -95,6 +95,7 @@ public abstract class ProxyAutomobile {
 		boolean returnValue = false;
 		model.Automobile automobileObject;
 		automobileObject = automobileTable.getByKey(automobileKey);
+		// System.out.println(automobileKey); testing purposes only
 		if (automobileObject != null) {
 			automobileObject.setOptionSetChoice(optionSetName, optionName);
 			returnValue = true;

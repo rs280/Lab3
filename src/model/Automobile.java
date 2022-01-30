@@ -71,6 +71,7 @@ public class Automobile implements java.io.Serializable {
 	private OptionSet getOptionSet(int OptionSetIndex) {
 		OptionSet optionSetObject = null;
 		try {
+			// System.out.println(OptionSetIndex); Testing purposes only
 			optionSetObject = optionSetList.get(OptionSetIndex);
 		} catch (ArrayIndexOutOfBoundsException e) {
 			e.printStackTrace();
@@ -245,10 +246,11 @@ public class Automobile implements java.io.Serializable {
 	 * @param optionName option name
 	 * @return -1 if not found and option index position if found **/
 	public int findOptionSetOptionIndex(int OptionSetIndex, String optionName) {
-		int returnIndex = -1;
+		int returnIndex = 0;
 		OptionSet optionSetObject = getOptionSet(OptionSetIndex);
 		if (optionSetObject != null) {
 			returnIndex = optionSetObject.findOptionIndex(optionName);
+			//System.out.println(returnIndex); testing purposes only
 		}
 		return returnIndex;
 	}
@@ -407,6 +409,7 @@ public class Automobile implements java.io.Serializable {
 		try {
 			optionSetIndex = findOptionSetIndex(optionSetName);
 			optionIndex = findOptionSetOptionIndex(optionSetIndex, optionName);
+			// System.out.println(optionIndex); Testing purposes only
 			setOptionSetChoiceByIndex(optionSetIndex, optionIndex);
 			returnValue = true;
 		} catch (exception.AutoException e) {

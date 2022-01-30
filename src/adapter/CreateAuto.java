@@ -1,11 +1,5 @@
 package adapter;
 
-public interface CreateAuto {
-	public String buildAuto(String filename);
+public class CreateAuto extends ProxyAutomobile implements BuildAuto, UpdateAuto, ChooseAuto {
 
-	public boolean printAuto(String automobileKey);
-
-	public boolean serialize(String automobileKey, String fileName);
-
-	public String deserialize(String fileName);
 }

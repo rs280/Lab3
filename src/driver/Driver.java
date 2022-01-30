@@ -7,7 +7,7 @@ import adapter.*;
 public class Driver {
 
 	public static void main(String[] args) {
-		BuildAuto buildAutoInterface = new BuildAuto();
+		CreateAuto buildAutoInterface = new CreateAuto();
 		buildAutoInterface.init(); // only call this once
 		// Build Automobile Object from a file.
 		String FordZTW2021AutomobileKey = buildAutoInterface.buildAuto("FordZTW2021.txt");
